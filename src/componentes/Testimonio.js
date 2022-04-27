@@ -1,20 +1,21 @@
-function Testimonio(){
+import '../estilo/testimonio.css'
+
+function Testimonio(props){
   return (
     <div className="contenedor-testimonio">
       <img
         className="imagen-testimonio"
-        src={require("../imagenes/imagen-1.png")}
+        src={require(`../imagenes/${props.imagen}.png`)}
         alt="Testimonio"
       />
       <div className="contendor-texto-testimonio">
-        <p className="nombre-testimonio">Ivan andres soto</p>
-        <p className="nombre-testimonio">Software Engineer at Amazon</p>
         <p className="nombre-testimonio">
-          "It's scary to change careers. I only gained confidence that I could
-          code by working through the hundreds of hours of free lessons on
-          freeCodeCamp. Within a year I had a six-figure job as a Software
-          Engineer. freeCodeCamp changed my life."
+          <b>{props.nombre} </b>en {props.pais}
         </p>
+        <p className="cargo-testimonio">
+          {props.cargo} en <b>{props.empresa}</b>
+        </p>
+        <p className="text-testimonio">{props.testimonio}</p>
       </div>
     </div>
   );
